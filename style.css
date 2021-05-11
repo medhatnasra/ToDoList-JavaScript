@@ -1,0 +1,268 @@
+/* ###############################
+ Start Global Styles  
+ #################################### */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: linear-gradient(315deg, #efecec 0%, #c7857f 74%);
+}
+
+body {
+  font-family: "Pacifico", cursive;
+}
+
+/* ###############################
+ End Global Styles  
+ #################################### */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ff4e00;
+  background-image: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.container .title {
+  position: absolute;
+  top: 5%;
+  left: 17%;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+.container .title h1 {
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.904);
+  opacity: 0.5;
+  letter-spacing: 4px;
+}
+.container .title h1::first-letter {
+  font-size: 170px;
+  text-decoration: none;
+}
+.container .glass-radio,
+.glass-radio2,
+.glass-radio3 {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.233);
+  border-radius: 50%;
+  clip-path: circle(1px at 50%);
+  -webkit-clip-path: circle(1px at 50%);
+  -o-clip-path: circle(1px at 50%);
+  -moz-clip-path: circle(1px at 50%);
+  -ms-clip-path: circle(1px at 50%);
+}
+.container .glass-radio {
+  position: absolute;
+  top: 72%;
+  left: 62%;
+  transition: clip-path 0.2s ease-in-out;
+}
+.container .glass-radio2 {
+  position: absolute;
+  top: 49%;
+  left: 35%;
+  transition: clip-path 0.9s ease-in-out;
+}
+.container .glass-radio3 {
+  position: absolute;
+  top: 25%;
+  left: 62%;
+  transition: clip-path 2s ease-in-out;
+}
+
+.glass-radio.popup,
+.glass-radio2.popup,
+.glass-radio3.popup {
+  clip-path: circle(100px at 50%);
+  -webkit-clip-path: circle(100px at 50%);
+  -o-clip-path: circle(100px at 50%);
+  -moz-clip-path: circle(100px at 50%);
+  -ms-clip-path: circle(100px at 50%);
+}
+
+/* ###############################
+ Start Workin with Form (row1)  
+ #################################### */
+.container .row1 {
+  flex: 1 10%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.row1 .form {
+  width: 400px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+@media (max-width: 400px) {
+  .row1 .form {
+    width: 200px;
+  }
+}
+.row1 .form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 13px;
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  font-family: "Pacifico", cursive;
+}
+.row1 .form .form-label {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.651);
+}
+.row1 .form-label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  height: 4px;
+  background-image: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.row1 .form span {
+  position: absolute;
+  color: white;
+  top: 15px;
+  transition: all 0.5s;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+input:focus + .form-label span,
+input:valid + .form-label span {
+  top: 0;
+}
+input:focus + .form-label::after {
+  transform: translateX(0%);
+}
+
+input:focus ~ .fa-arrow-circle-down {
+  animation: arrowmove 0.5s linear alternate-reverse infinite;
+}
+
+.row1 .form i {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-size: 21px;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes arrowmove {
+  from {
+    transform: translateY(0);
+  }
+  from {
+    transform: translateY(-10px);
+  }
+}
+
+.row1 select {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+}
+.row1 select option {
+    color: black;
+
+}
+/* ###############################
+ End Workin with Form (row1)  
+ #################################### */
+
+/* ###############################
+ Start Workin with Our List (row2)  
+ #################################### */
+.container .row2 {
+  flex: 1 90%;
+}
+
+.row2 .links {
+  list-style: none;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.116);
+  width: 400px;
+  text-align: center;
+  min-height: 400px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 9px 0 rgb(0 0 0 / 50%);
+  overflow: hidden;
+  z-index: 2;
+  transition: transform 1s ease-in-out;
+  transform: translateY(-160%);
+}
+@media (max-width: 400px) {
+    .row2 .links {
+      width: 300px;
+    }
+  }
+.links.appear {
+  transform: translateY(0%);
+}
+.row2 .links li {
+  margin: 10px 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.11);
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.row2 .links li button {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 8px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.links .fa-check-square {
+  margin-left: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.fall {
+  transform: translateY(100px) rotate(20deg);
+  opacity: 0;
+}
+/* ###############################
+ End Workin with Our List (row2)  
+ #################################### */

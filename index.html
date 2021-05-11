@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Javascript</title>
+    <!-- Adding Font-Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <!-- adding Font From Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Adding Our CSS File -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Todo <br />List</h1>
+      </div>
+      <div class="glass-radio"></div>
+      <div class="glass-radio2"></div>
+      <div class="glass-radio3"></div>
+      <div class="row1">
+        <div class="form">
+          <input type="text" class="form-input" required />
+          <label class="form-label"><span>What you want to do ?</span></label>
+          <i class="fas fa-arrow-circle-down"></i>
+        </div>
+        <select name="filterlist" id="filterlist">
+          <option value="All">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+=
+        </select>
+      </div>
+      <div class="row2">
+        <ul class="links"></ul>
+      </div>
+    </div>
+
+    <!-- Adding Javascript File -->
+    <script src="./main.js"></script>
+  </body>
+</html>
